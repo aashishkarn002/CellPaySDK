@@ -100,11 +100,7 @@
 		182ABCC724C94D70004009B4 /* CellPaySDK */ = {
 			isa = PBXGroup;
 			children = (
-				182ABCFF24C960AA004009B4 /* Enums */,
-				182ABCFA24C95EA1004009B4 /* Extensions */,
-				182ABCF624C95CE3004009B4 /* Controller */,
-				182ABCF524C95CDE004009B4 /* View */,
-				182ABCF424C95CD8004009B4 /* Model */,
+				182ABD1324C98D8C004009B4 /* Classes */,
 				182ABCC824C94D70004009B4 /* CellPaySDK.h */,
 				182ABCC924C94D70004009B4 /* Info.plist */,
 			);
@@ -168,6 +164,18 @@
 				182ABD0024C960BB004009B4 /* RegixValidation.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		182ABD1324C98D8C004009B4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				182ABCF424C95CD8004009B4 /* Model */,
+				182ABCF524C95CDE004009B4 /* View */,
+				182ABCF624C95CE3004009B4 /* Controller */,
+				182ABCFA24C95EA1004009B4 /* Extensions */,
+				182ABCFF24C960AA004009B4 /* Enums */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		711D4192BB10AD5107C53108 /* Frameworks */ = {
