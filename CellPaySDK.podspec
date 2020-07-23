@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => 'https://github.com/aashishkarn002/CellPaySDK.git', :tag => s.version.to_s }
  
   s.source_files = 'CellPaySDK/Classes/**/*'
-  s.resources = 'CellPaySDK/Assets.xcassets/*.png'
+ # s.resources = 'CellPaySDK/Assets.xcassets/*.png'
   s.resource_bundles = {
     'CellPaySDK' => ['CellPaySDK/**/*.*']
   }
