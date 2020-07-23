@@ -14,6 +14,9 @@ Pod::Spec.new do |s|
  
   s.source_files = 'CellPaySDK/Classes/**/*'
   s.resources = 'CellPaySDK/Assets.xcassets/*.png'
+  s.resource_bundles = {
+    'CellPaySDK' => ['CellPaySDK/**/*.*']
+  }
   s.framework = 'UIKit'
   s.swift_version = '5.0'
   
