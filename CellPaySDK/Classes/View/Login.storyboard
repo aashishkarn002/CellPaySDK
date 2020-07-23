@@ -122,6 +122,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dd1-ba-3l0"/>
                     </view>
+                    <connections>
+                        <outlet property="logoImageView" destination="3oJ-7r-Deo" id="7yy-Sv-Pc5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tek-Vg-Pcf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
