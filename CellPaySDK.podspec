@@ -6,7 +6,7 @@
 #  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
 #
 
-Pod::Spec.new do |spec|
+Pod::Spec.new do |s|
 
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -15,112 +15,48 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "CellPaySDK"
-  spec.version      = "1.0.0"
-  spec.summary      = "The cellpay sdk let make payment."
-  spec.description  = "The cellpay sdk help you pay for any services."
-  spec.homepage     = "https://github.com/aashishkarn002/CellPaySDK"
+  s.name         = "CellPaySDK"
+  s.version      = "1.0.0"
+  s.summary      = "The cellpay sdk is written in Swift which allow you make third party payment."
+  s.description  = <<-DESC
+  The cellpay sdk is written in Swift which allow you make third party payment. The process inculdes login, select bank and make payment.
+                           DESC
+  s.homepage     = "https://github.com/aashishkarn002/CellPaySDK"
+  s.platform     = :ios, "11.0"
+  s.requires_arc = true
+  s.license      = "MIT"
+  s.source       = { :path => '.' }
+  s.subspec 'Core' do |core|
+  core.source_files = 'CellPaySDK/**/*'
+  core.resources = 'CellPaySDK/Assets/*.png'
+  s.frameworks = "MaterialComponents/Cards", "MaterialComponents/TextFields","MaterialComponents/Buttons","MaterialComponents/Snackbar","DropDown","SPStorkController","KafkaRefresh","SPFakeBar"
+  s.author = { "Aashish Karn" => "aashish.karn@cellcom.net.np" }
+  end
 
-
-  # This description is used to generate tags and improve search results.
-  #   * Think: What does it do? Why did you write it? What is the focus?
-  #   * Try to keep it short, snappy and to the point.
-  #   * Write the description between the DESC delimiters below.
-  #   * Finally, don't worry about the indent, CocoaPods strips it!
-  spec.description  = <<-DESC
-                   DESC
-
-  spec.homepage     = "http://EXAMPLE/CellPaySDK"
+ 
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
-  # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Licensing your code is important. See https://choosealicense.com for more info.
-  #  CocoaPods will detect a license file if there is a named LICENSE*
-  #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
-  #
 
-  spec.license      = "MIT"
+  
   # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
-  # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Specify the authors of the library, with email addresses. Email addresses
-  #  of the authors are extracted from the SCM log. E.g. $ git log. CocoaPods also
-  #  accepts just a name if you'd rather not provide an email address.
-  #
-  #  Specify a social_media_url where others can refer to, for example a twitter
-  #  profile URL.
-  #
+ 
 
-  spec.author             = { "Aashish Karn" => "aashish.karn@cellcom.net.np" }
-  # Or just: spec.author    = "Aashish Karn"
-  # spec.authors            = { "Aashish Karn" => "rahul.karanjit@cellcom.net.np" }
-  # spec.social_media_url   = "https://twitter.com/Aashish Karanjit"
-
-  # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  If this Pod runs only on iOS or OS X, then specify the platform and
-  #  the deployment target. You can optionally include the target after the platform.
-  #
-
-  # spec.platform     = :ios
-  # spec.platform     = :ios, "11.0"
-
-  #  When using multiple platforms
-  # spec.ios.deployment_target = "5.0"
-  # spec.osx.deployment_target = "10.7"
-  # spec.watchos.deployment_target = "2.0"
-  # spec.tvos.deployment_target = "9.0"
+  
 
 
-  # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Specify the location from where the source should be retrieved.
-  #  Supports git, hg, bzr, svn and HTTP.
-  #
-
-  spec.source       = { :path => '.' }
-
-
-  # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  CocoaPods is smart about how it includes source code. For source files
-  #  giving a folder will include any swift, h, m, mm, c & cpp files.
-  #  For header files it will include any header in the folder.
-  #  Not including the public_header_files will make all headers public.
-  #
-
-  spec.source_files  = "Classes", "Classes/**/*.{h,m}"
-  spec.exclude_files = "Classes/Exclude"
+  
+  
+  #s.source_files  = "Classes", "Classes/**/*.{h,m}"
+  #s.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
 
 
-  # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  A list of resources included with the Pod. These are copied into the
-  #  target bundle with a build phase script. Anything else will be cleaned.
-  #  You can preserve files from being cleaned, please don't preserve
-  #  non-essential files like tests, examples and documentation.
-  #
-
-  # spec.resource  = "icon.png"
-  # spec.resources = "Resources/*.png"
-
-  # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
-
-
-  # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Link your library with frameworks, or libraries. Libraries do not include
-  #  the lib prefix of their name.
-  #
-
   # spec.framework  = "SomeFramework"
-  # spec.frameworks = "SomeFramework", "AnotherFramework"
+  #
 
   # spec.library   = "iconv"
   # spec.libraries = "iconv", "xml2"
