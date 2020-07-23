@@ -19,7 +19,7 @@ Pod::Spec.new do |spec|
   spec.version      = "1.0.0"
   spec.summary      = "The cellpay sdk let make payment."
   spec.description  = "The cellpay sdk help you pay for any services."
-  spec.homepage     = "https://cellpay.com.np/"
+  spec.homepage     = "https://github.com/aashishkarn002/CellPaySDK"
 
 
   # This description is used to generate tags and improve search results.
