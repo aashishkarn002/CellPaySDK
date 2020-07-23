@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ep7-44-a6P">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="amx-0J-IsS">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ep7-44-a6P" customClass="LoginViewController" customModule="CellPaySDK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="un7-3r-lfV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XG4-bM-c5W">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="BWG-9I-SRw">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="3oJ-7r-Deo">
+                                        <rect key="frame" x="107" y="50" width="200" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="Jjk-YB-j7g"/>
+                                            <constraint firstAttribute="height" constant="100" id="Ylh-Zx-5hO"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="BWG-9I-SRw" secondAttribute="bottom" id="2Yu-3m-ULr"/>
+                                    <constraint firstAttribute="height" constant="200" id="BIm-tc-5xj"/>
+                                    <constraint firstItem="3oJ-7r-Deo" firstAttribute="centerX" secondItem="XG4-bM-c5W" secondAttribute="centerX" id="MtS-wT-8F2"/>
+                                    <constraint firstAttribute="trailing" secondItem="BWG-9I-SRw" secondAttribute="trailing" id="Smo-5F-iW5"/>
+                                    <constraint firstItem="BWG-9I-SRw" firstAttribute="top" secondItem="XG4-bM-c5W" secondAttribute="top" id="Xbs-Wb-G6o"/>
+                                    <constraint firstItem="3oJ-7r-Deo" firstAttribute="centerX" secondItem="XG4-bM-c5W" secondAttribute="centerX" id="Xs3-jE-yXn"/>
+                                    <constraint firstItem="3oJ-7r-Deo" firstAttribute="centerY" secondItem="XG4-bM-c5W" secondAttribute="centerY" id="kFN-r2-LLv"/>
+                                    <constraint firstItem="BWG-9I-SRw" firstAttribute="leading" secondItem="XG4-bM-c5W" secondAttribute="leading" id="qqN-oE-ytd"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="liY-4Z-ppZ">
+                                <rect key="frame" x="0.0" y="786" width="414" height="110"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lower_bg" translatesAutoresizingMaskIntoConstraints="NO" id="cjN-qu-sOH">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="cjN-qu-sOH" secondAttribute="bottom" id="Coy-is-PMl"/>
+                                    <constraint firstAttribute="height" constant="110" id="Cvi-8a-BAP"/>
+                                    <constraint firstAttribute="trailing" secondItem="cjN-qu-sOH" secondAttribute="trailing" id="D9y-ei-E2P"/>
+                                    <constraint firstItem="cjN-qu-sOH" firstAttribute="top" secondItem="liY-4Z-ppZ" secondAttribute="top" id="XgW-8R-7Pv"/>
+                                    <constraint firstItem="cjN-qu-sOH" firstAttribute="leading" secondItem="liY-4Z-ppZ" secondAttribute="leading" id="gIt-OI-vxe"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H51-jE-Gyt">
+                                <rect key="frame" x="0.0" y="200" width="414" height="586"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q56-o1-e2e" customClass="AppTextField" customModule="CellPaySDK" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="20" width="382" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="mLC-kc-Dum"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter 6 Digit PIN" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2J7-dy-dxC" customClass="AppTextField" customModule="CellPaySDK" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="116" width="382" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="8w9-Vn-pu5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eM-8Z-60S" customClass="AppButton" customModule="CellPaySDK" customModuleProvider="target">
+                                        <rect key="frame" x="40" y="226" width="334" height="45"/>
+                                        <color key="backgroundColor" name="col_appColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="Nwi-eX-dng"/>
+                                        </constraints>
+                                        <state key="normal" title="Log In">
+                                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="2J7-dy-dxC" firstAttribute="leading" secondItem="H51-jE-Gyt" secondAttribute="leading" constant="16" id="76H-ZD-YjS"/>
+                                    <constraint firstItem="6eM-8Z-60S" firstAttribute="top" secondItem="2J7-dy-dxC" secondAttribute="bottom" constant="30" id="7vW-Sz-5rA"/>
+                                    <constraint firstAttribute="trailing" secondItem="2J7-dy-dxC" secondAttribute="trailing" constant="16" id="EdF-of-Z7l"/>
+                                    <constraint firstAttribute="trailing" secondItem="Q56-o1-e2e" secondAttribute="trailing" constant="16" id="GmY-tr-qm9"/>
+                                    <constraint firstItem="Q56-o1-e2e" firstAttribute="top" secondItem="H51-jE-Gyt" secondAttribute="top" constant="20" id="Sf7-Bu-f9k"/>
+                                    <constraint firstAttribute="trailing" secondItem="6eM-8Z-60S" secondAttribute="trailing" constant="40" id="cgY-EL-SER"/>
+                                    <constraint firstItem="Q56-o1-e2e" firstAttribute="leading" secondItem="H51-jE-Gyt" secondAttribute="leading" constant="16" id="hRU-65-GNZ"/>
+                                    <constraint firstItem="6eM-8Z-60S" firstAttribute="centerX" secondItem="H51-jE-Gyt" secondAttribute="centerX" id="kuC-I8-7u3"/>
+                                    <constraint firstItem="6eM-8Z-60S" firstAttribute="leading" secondItem="H51-jE-Gyt" secondAttribute="leading" constant="40" id="ryu-Xg-Hdh"/>
+                                    <constraint firstItem="2J7-dy-dxC" firstAttribute="top" secondItem="Q56-o1-e2e" secondAttribute="bottom" constant="16" id="u7J-hI-3Ed"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="XG4-bM-c5W" firstAttribute="leading" secondItem="dd1-ba-3l0" secondAttribute="leading" id="4vY-cL-DII"/>
+                            <constraint firstItem="H51-jE-Gyt" firstAttribute="top" secondItem="XG4-bM-c5W" secondAttribute="bottom" id="6Bc-dU-2K6"/>
+                            <constraint firstItem="H51-jE-Gyt" firstAttribute="leading" secondItem="dd1-ba-3l0" secondAttribute="leading" id="Ebf-cT-3JV"/>
+                            <constraint firstItem="dd1-ba-3l0" firstAttribute="trailing" secondItem="H51-jE-Gyt" secondAttribute="trailing" id="K3W-5A-kby"/>
+                            <constraint firstItem="XG4-bM-c5W" firstAttribute="top" secondItem="un7-3r-lfV" secondAttribute="top" id="NtI-Rs-c97"/>
+                            <constraint firstItem="dd1-ba-3l0" firstAttribute="trailing" secondItem="liY-4Z-ppZ" secondAttribute="trailing" id="Shw-XB-Xu9"/>
+                            <constraint firstAttribute="bottom" secondItem="liY-4Z-ppZ" secondAttribute="bottom" id="TYX-wd-fCr"/>
+                            <constraint firstItem="dd1-ba-3l0" firstAttribute="trailing" secondItem="XG4-bM-c5W" secondAttribute="trailing" id="Wtm-PM-6Oy"/>
+                            <constraint firstItem="liY-4Z-ppZ" firstAttribute="leading" secondItem="dd1-ba-3l0" secondAttribute="leading" id="ZSp-j9-CCl"/>
+                            <constraint firstItem="liY-4Z-ppZ" firstAttribute="top" secondItem="H51-jE-Gyt" secondAttribute="bottom" id="qY0-lb-4fE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dd1-ba-3l0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tek-Vg-Pcf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-14" y="86"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="login_bg" width="375" height="221"/>
+        <image name="logo" width="182" height="82"/>
+        <image name="lower_bg" width="375" height="93"/>
+        <namedColor name="col_appColor">
+            <color red="0.098039215686274508" green="0.22352941176470589" blue="0.51372549019607838" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
