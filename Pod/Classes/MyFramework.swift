@@ -17,7 +17,7 @@ public class MyFramework {
     }
     
     static var bundle:Bundle {
-        let podBundle = Bundle(for: FrameworkVC.self)
+        let podBundle = Bundle(for: LoginVC.self)
         
         let bundleURL = podBundle.url(forResource: "MyFramework", withExtension: "bundle")
         return Bundle(url: bundleURL!)!

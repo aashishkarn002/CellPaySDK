@@ -7,38 +7,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--FrameworkVC-->
-        <scene sceneID="t01-0h-ooA">
-            <objects>
-                <viewController storyboardIdentifier="FrameworkVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8hE-TU-ttV" customClass="FrameworkVC" customModule="MyFramework" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fWy-Dq-V2J"/>
-                        <viewControllerLayoutGuide type="bottom" id="vrQ-Uv-kCm"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mZl-9Q-qIg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="92y-Gk-Hui">
-                                <rect key="frame" x="16" y="0.0" width="343" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="N3j-UW-Xsi"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="92y-Gk-Hui" firstAttribute="top" secondItem="fWy-Dq-V2J" secondAttribute="bottom" id="2sM-L5-RKC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="92y-Gk-Hui" secondAttribute="trailing" id="Gap-QR-bWg"/>
-                            <constraint firstItem="92y-Gk-Hui" firstAttribute="leading" secondItem="mZl-9Q-qIg" secondAttribute="leadingMargin" id="XOX-9V-i0a"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="L4i-UR-QTl"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VGH-Pv-CYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="961" y="311"/>
-        </scene>
         <!--LoginVC-->
         <scene sceneID="aha-Th-zWA">
             <objects>
