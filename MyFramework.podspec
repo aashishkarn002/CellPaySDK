@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
-
+  s.swift_versions = 5.0
   s.source_files = 'Pod/Classes/**/*.{swift}'
   s.resource_bundles = {
     'MyFramework' => ['Pod/Classes/**/*.{storyboard,xib,xcassets,json,imageset,png}']

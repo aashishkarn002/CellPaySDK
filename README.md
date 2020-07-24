@@ -22,7 +22,7 @@ pod "MyFramework"
 
 ## Author
 
-John Nilsen, nilsen340@gmail.com
+Aashish Karn, aashish.karn@cellcom.net.np
 
 ## License
 
