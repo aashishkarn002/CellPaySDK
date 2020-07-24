@@ -20,19 +20,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hTe-0Q-ZQX">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="150" width="375" height="517"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="8hE-TU-ttV" id="446-z2-cVR"/>
                                     <outlet property="delegate" destination="8hE-TU-ttV" id="Q56-vC-yZr"/>
                                 </connections>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="92y-Gk-Hui">
+                                <rect key="frame" x="16" y="0.0" width="343" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="N3j-UW-Xsi"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="hTe-0Q-ZQX" secondAttribute="trailing" id="1Ht-7B-5PI"/>
+                            <constraint firstItem="92y-Gk-Hui" firstAttribute="top" secondItem="fWy-Dq-V2J" secondAttribute="bottom" id="2sM-L5-RKC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="92y-Gk-Hui" secondAttribute="trailing" id="Gap-QR-bWg"/>
                             <constraint firstAttribute="bottom" secondItem="hTe-0Q-ZQX" secondAttribute="bottom" id="TMY-fe-uVQ"/>
-                            <constraint firstItem="hTe-0Q-ZQX" firstAttribute="top" secondItem="mZl-9Q-qIg" secondAttribute="top" id="az3-L9-ET9"/>
+                            <constraint firstItem="hTe-0Q-ZQX" firstAttribute="top" secondItem="92y-Gk-Hui" secondAttribute="bottom" id="V11-He-GfP"/>
+                            <constraint firstItem="92y-Gk-Hui" firstAttribute="leading" secondItem="mZl-9Q-qIg" secondAttribute="leadingMargin" id="XOX-9V-i0a"/>
                             <constraint firstItem="hTe-0Q-ZQX" firstAttribute="leading" secondItem="mZl-9Q-qIg" secondAttribute="leading" id="dk0-DW-I10"/>
                         </constraints>
                     </view>
@@ -46,4 +55,7 @@
             <point key="canvasLocation" x="961" y="311"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="500" height="500"/>
+    </resources>
 </document>
