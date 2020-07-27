@@ -14,7 +14,44 @@
       "idiom" : "universal",
       "filename" : "logo@3x.png",
       "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "login@3x.png",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "login_bg@3x.png",
+      "scale" : "3x"
+    },
+    {
+         "idiom" : "universal",
+         "filename" : "lower_bg@3x.png",
+         "scale" : "3x"
+       },
+    {
+      "idiom" : "universal",
+      "filename" : "cellpaylogo@3x.png",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "bg@3x.png",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "left-arrow.png",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "close.png",
+      "scale" : "3x"
     }
+    
+    
   ],
   "info" : {
     "version" : 1,

@@ -11,8 +11,8 @@ import MyFramework
 
 class ViewController: UIViewController {
     
-    override func viewDidAppear(animated: Bool) {
-        MyFramework.performSegueToFrameworkVC(self)
+    override func viewDidAppear(_ animated: Bool) {
+        MyFramework.performSegueToLoginVC(caller: self)
     }
 }
 
