@@ -9,6 +9,7 @@ import Foundation
 let currentLanguageType         = "cuurentLanguageType"
 class StringConstants: NSObject {
     var invalidPin:String!
+    var invoiceNumber: String!
     var invalidNumber:String!
     var invalidOTP:String!
     var missingPin:String!
@@ -79,6 +80,7 @@ class StringConstants: NSObject {
         sessionExpired = "सत्र समाप्त भयो"
     }
     func setEnglish()  {
+        invoiceNumber = "Please enter invoice number"
         invalidPin               = "Please enter a valid 6 digits PIN"
         invalidNumber            = "Please enter valid mobile number"
         invalidOTP               = "Please enter six digits OTP, which we sent on your mobile number"
@@ -98,7 +100,7 @@ class StringConstants: NSObject {
         selectBankTo                = "Select Bank To"
         selectAccountNumber        = "Select Account Number to Debit"
         enterAmountToSend          =  "Enter Amount to Send"
-        enterAmount = "Enter Amount"
+        enterAmount = " Please enter Amount"
         selectBank              = "Select Bank"
         enterAccountNumber      = "Enter Account Number"
         addAccount              = "Add Account"

@@ -57,11 +57,11 @@ public class ApiCalling:NSObject {
             }
         }
     }
-    func callConfirmMemberPayments(parameters:[String: Any]?,completion:@escaping ResultCallback<PaymentMerchantResponse>) {
+    func callConfirmMemberPayments(parameters:[String: Any]?,completion:@escaping ResultCallback<ConfirmPaymentResponse>) {
         self.apiClient.sendRequest(WebService.confirmMemberPayment, parameters: parameters, method: HTTPMethod.post.rawValue) { (status) in
             switch status {
             case .success(let data):
-                guard let response = try? data.decode(to: PaymentMerchantResponse.self) else {
+                guard let response = try? data.decode(to: ConfirmPaymentResponse.self) else {
                     completion(.failure(APIError.decoding))
                     return
                 }

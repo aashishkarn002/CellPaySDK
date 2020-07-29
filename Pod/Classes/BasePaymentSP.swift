@@ -11,7 +11,7 @@ protocol InternalCustomValues: Codable {
     var fieldID: String { get }
     var value: String { get }
 }
-struct BasePaymentSP: Codable {
+struct MemberBasePaymentSP: Codable {
     let transferTypeID, amount, toMemberPrincipal, basePaymentSPDescription: String
     let currencyID: String
     let webRequest: Bool
@@ -22,6 +22,23 @@ struct BasePaymentSP: Codable {
         case transferTypeID = "transferTypeId"
         case amount = "amount"
         case toMemberPrincipal = "toMemberPrincipal"
+        case basePaymentSPDescription = "description"
+        case currencyID = "currencyId"
+        case webRequest = "webRequest"
+        case customValues = "customValues"
+        case isOtpEnable = "isOtpEnable"
+    }
+}
+struct SystemBasePaymentSP: Codable {
+    let transferTypeID, amount, basePaymentSPDescription: String
+    let currencyID: String
+    let webRequest: Bool
+    let customValues: [BasePaymentCustomValues]
+    let isOtpEnable: Bool
+    
+    enum CodingKeys: String, CodingKey {
+        case transferTypeID = "transferTypeId"
+        case amount = "amount"
         case basePaymentSPDescription = "description"
         case currencyID = "currencyId"
         case webRequest = "webRequest"

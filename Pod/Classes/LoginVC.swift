@@ -11,7 +11,8 @@ public class LoginVC: UIViewController{
     
     @IBOutlet weak var pinNumberTF: SkyFloatingLabelTextField!
     @IBOutlet weak var mobileNumberTF: SkyFloatingLabelTextField!
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var loginButton: TKTransitionSubmitButton!
+    var cellPayArguments: CellPayPaymentArguments?
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
@@ -21,7 +22,7 @@ public class LoginVC: UIViewController{
         self.hideKeyboardOnTapAround()
         self.setupView()
         self.setupLanguageForSDK()
-       
+        
     }
     
     func hideKeyboardOnTapAround() {
@@ -36,18 +37,14 @@ public class LoginVC: UIViewController{
     
     
     @IBAction func loginButtonClicked(_ sender: Any) {
-        if mobileNumberTF.text?.isEmpty ?? true{
+        if mobileNumberTF.text?.isEmpty ?? true  || mobileNumberTF.text?.count ?? 0 < 10{
             mobileNumberTF.errorMessage = StringConstants.sharedInstance.invalidNumber
         }
-        if mobileNumberTF.text?.count ?? 0 < 10  {
-            mobileNumberTF.errorMessage = StringConstants.sharedInstance.invalidNumber
-        }
-        if pinNumberTF.text?.count ?? 0 < 6 {
+        
+        else if pinNumberTF.text?.count ?? 0 < 6 || pinNumberTF.text?.isEmpty ?? true {
             pinNumberTF.errorMessage = StringConstants.sharedInstance.invalidPin
         }
-        if pinNumberTF.text?.isEmpty ?? true  {
-            pinNumberTF.errorMessage = StringConstants.sharedInstance.invalidPin
-        }
+        
         else {
             mobileNumberTF.errorMessage = ""
             pinNumberTF.errorMessage = ""
@@ -57,9 +54,15 @@ public class LoginVC: UIViewController{
         
     }
 }
+//Get Required Data
+extension LoginVC {
+    func getData(requiredData: CellPayPaymentArguments) {
+        self.cellPayArguments = requiredData
+    }
+}
 extension LoginVC {
     func callLogin() {
-        IJProgressView.shared.showProgressView()
+        self.loginButton.startLoadingAnimation()
         let apiCalling = ApiCalling()
         apiCalling.userLogin(userName:mobileNumberTF.text ?? "",password:pinNumberTF.text ??          "",completion: { (status) in
             switch status {
@@ -68,7 +71,12 @@ extension LoginVC {
                 self.getBankAccount()
             case .failure(let error):
                 print(error)
-                IJProgressView.shared.hideProgressView()
+                DispatchQueue.main.async {
+                    self.loginButton.returnToOriginalState()
+                    
+                }
+                
+                
             }
         })
     }
@@ -77,39 +85,24 @@ extension LoginVC {
         apiCalling.getCellPayBankAccoutList { (status) in
             switch status {
             case .success(let response):
-                self.callPayMerchantmemberPayment()
+                DispatchQueue.main.async {
+                    self.loginButton.returnToOriginalState()
+                    MyFramework.performSegueToMerchantTransactionDetailVC(caller: self, merchantDetailList: response.payload.memberDetailsList, requiredArguments: self.cellPayArguments!)
+                }
+                
+                //self.callPayMerchantmemberPayment()
                 print(response)
             case .failure(let error):
-                IJProgressView.shared.hideProgressView()
+                DispatchQueue.main.async {
+                    self.loginButton.returnToOriginalState()
+                    
+                }
                 print(error)
                 
             }
         }
     }
-    func callPayMerchantmemberPayment(){
-        
-        let customValues:[InternalCustomValues] = [
-            SelectBankInternalValue(fieldID: "35",value: "NIBL"),
-            PaymentMethodInternalValue(fieldID: "15", value: "Account"),
-            AccountNumberInternalValue(fieldID: "14", value: "gah@123"),
-            InvoiceNumberInternalValue(fieldID: "99", value: "1123")
-        ]
-        let params = BasePaymentSP(transferTypeID: "50", amount: "200", toMemberPrincipal: "9801977888", basePaymentSPDescription: "Pay Merchant", currencyID: "1", webRequest: true, customValues: customValues.map(BasePaymentCustomValues.init), isOtpEnable: false)
-        let sendParams = try? params.toDictionary()
-        let apiCalling = ApiCalling()
-        apiCalling.callMemberPayments(parameters: sendParams) { (status) in
-            switch status {
-            case .success(let response):
-                IJProgressView.shared.hideProgressView()
-                print(response)
-            case .failure(let error):
-                IJProgressView.shared.hideProgressView()
-                print(error)
-                
-            }
-        }
-        
-    }
+   
 }
 extension LoginVC: UITextFieldDelegate {
     
@@ -127,11 +120,11 @@ extension LoginVC: UITextFieldDelegate {
         }
     }
     public func textFieldDidBeginEditing(_ textField: UITextField) {
-        if let mobileNumbertextField = mobileNumberTF {
-            mobileNumbertextField.errorMessage = ""
+        if textField == mobileNumberTF {
+            mobileNumberTF.errorMessage = ""
         }
-        if let pinNumbertextField = pinNumberTF {
-            pinNumbertextField.errorMessage = ""
+        else if textField == pinNumberTF {
+            pinNumberTF.errorMessage = ""
         }
     }
 }

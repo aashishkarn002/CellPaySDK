@@ -8,10 +8,10 @@
 import Foundation
 import UIKit
 extension UIColor {
-    static var appColor: UIColor {
-        return UIColor(red: 25.0, green: 57.0, blue: 131.0, alpha: 1.0)
+    public static var appColor: UIColor {
+        return UIColor(red: 25.0/255, green: 57.0/255, blue: 131.0/255, alpha: 1.0)
     }
-    static var textfieldErrorColor: UIColor{
+    public static var textfieldErrorColor: UIColor{
         return UIColor(red: 255.0, green: 0, blue: 0, alpha: 1.0)
     }
 }

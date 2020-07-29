@@ -8,13 +8,13 @@
 import Foundation
 public class CellPayPaymentArguments {
     
-    let mobileNumber: String?
+    public let mobileNumber: String?
 //    let imageUrl: String?
-    let merchantName: String
-    let paymentType:Int?
-    let price:Int?
-    let invoiceID: String?
-    init(mobileNumber:String,merchantName:String,paymentType:Int,price:Int,invoiceID:String) {
+    public let merchantName: String
+    public let paymentType:Int?
+    public let price:Int?
+    public let invoiceID: String?
+    public init(mobileNumber:String,merchantName:String,paymentType:Int,price:Int,invoiceID:String) {
         self.mobileNumber = mobileNumber
 //        self.imageUrl = imageUrl
         self.merchantName = merchantName

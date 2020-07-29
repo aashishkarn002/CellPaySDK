@@ -12,7 +12,7 @@ struct CellPayMessageError: Codable {
 
     enum CodingKeys: String, CodingKey {
         case status = "status"
-        case sessionExpired = "true"
+        case sessionExpired = "sessionExpired"
         case errors = "errors"
        
     }

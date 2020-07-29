@@ -120,7 +120,7 @@
                                     <constraint firstAttribute="trailing" secondItem="TvO-yX-vwf" secondAttribute="trailing" constant="20" id="vaD-Mp-cVv"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KiV-lT-lEp">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KiV-lT-lEp" customClass="TKTransitionSubmitButton" customModule="MyFramework" customModuleProvider="target">
                                 <rect key="frame" x="56" y="433.5" width="263" height="45"/>
                                 <color key="backgroundColor" red="0.098039215690000001" green="0.22352941179999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -180,10 +180,10 @@
             </objects>
             <point key="canvasLocation" x="-177" y="115"/>
         </scene>
-        <!--Merchant Transaaaction DetailVC-->
+        <!--Merchant Transaction DetailVC-->
         <scene sceneID="dBT-tn-qaj">
             <objects>
-                <viewController storyboardIdentifier="MerchantTransaaactionDetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jig-M0-QEZ" customClass="MerchantTransaaactionDetailVC" customModule="MyFramework" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MerchantTransactionDetailVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jig-M0-QEZ" customClass="MerchantTransactionDetailVC" customModule="MyFramework" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nzc-OY-KGN"/>
                         <viewControllerLayoutGuide type="bottom" id="1ye-oO-cnT"/>
@@ -211,6 +211,9 @@
                                             <constraint firstAttribute="height" constant="25" id="wH4-tg-mgF"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="left-arrow.png"/>
+                                        <connections>
+                                            <action selector="backButttonClicked:" destination="Jig-M0-QEZ" eventType="touchUpInside" id="VOP-Bg-W2O"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -227,7 +230,7 @@
                                     <constraint firstAttribute="trailing" secondItem="EYY-bU-ek8" secondAttribute="trailing" constant="10" id="vaV-Qa-4m8"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hjT-PC-oSI" customClass="SkyFloatingLabelTextField" customModule="MyFramework" customModuleProvider="target">
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hjT-PC-oSI" customClass="SkyFloatingLabelTextField" customModule="MyFramework" customModuleProvider="target">
                                 <rect key="frame" x="26" y="70" width="323" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="RsM-pt-7Ww"/>
@@ -258,7 +261,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oca-nu-HqY" customClass="SkyFloatingLabelTextField" customModule="MyFramework" customModuleProvider="target">
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oca-nu-HqY" customClass="SkyFloatingLabelTextField" customModule="MyFramework" customModuleProvider="target">
                                 <rect key="frame" x="26" y="130" width="323" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7gC-hx-KEE"/>
@@ -323,7 +326,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybz-uJ-QPn">
                                 <rect key="frame" x="26" y="250" width="323" height="50"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LrC-Mh-JTO" customClass="SkyFloatingLabelTextField" customModule="MyFramework" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LrC-Mh-JTO" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="MyFramework" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
@@ -349,15 +352,30 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
                                                 <color key="value" red="0.68627450980000004" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="down-arrow.png"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iconTypeValue">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUU-4H-43k">
+                                        <rect key="frame" x="0.0" y="0.0" width="323" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="selectBankButtonClicked:" destination="Jig-M0-QEZ" eventType="touchUpInside" id="bu5-9j-jxG"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="dUU-4H-43k" firstAttribute="top" secondItem="ybz-uJ-QPn" secondAttribute="top" id="RYz-0D-iof"/>
                                     <constraint firstItem="LrC-Mh-JTO" firstAttribute="top" secondItem="ybz-uJ-QPn" secondAttribute="top" id="V72-rV-uM9"/>
                                     <constraint firstAttribute="trailing" secondItem="LrC-Mh-JTO" secondAttribute="trailing" id="dCi-WW-kXr"/>
+                                    <constraint firstItem="dUU-4H-43k" firstAttribute="leading" secondItem="ybz-uJ-QPn" secondAttribute="leading" id="dht-a1-4uy"/>
                                     <constraint firstItem="LrC-Mh-JTO" firstAttribute="leading" secondItem="ybz-uJ-QPn" secondAttribute="leading" id="emW-w7-hzi"/>
                                     <constraint firstAttribute="height" constant="50" id="p6O-5E-9zK"/>
+                                    <constraint firstAttribute="bottom" secondItem="dUU-4H-43k" secondAttribute="bottom" id="xaH-Df-wtn"/>
+                                    <constraint firstAttribute="trailing" secondItem="dUU-4H-43k" secondAttribute="trailing" id="xpO-OU-cgF"/>
                                     <constraint firstAttribute="bottom" secondItem="LrC-Mh-JTO" secondAttribute="bottom" id="yOV-TD-eQm"/>
                                 </constraints>
                             </view>
@@ -367,10 +385,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qxQ-1H-vem">
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="50"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0bO-ff-R6I" customClass="SkyFloatingLabelTextField" customModule="MyFramework" customModuleProvider="target">
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0bO-ff-R6I" customClass="SkyFloatingLabelTextField" customModule="MyFramework" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="323" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                                <textInputTraits key="textInputTraits"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="_placeholder" value="Enter Mobile Number"/>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelColor">
@@ -395,20 +413,31 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLJ-99-4Mk">
+                                                <rect key="frame" x="0.0" y="0.0" width="323" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <action selector="selectBankAccountNumberButtonClicked:" destination="Jig-M0-QEZ" eventType="touchUpInside" id="l03-PD-cbf"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="5xu-e9-AnN"/>
                                             <constraint firstItem="0bO-ff-R6I" firstAttribute="leading" secondItem="qxQ-1H-vem" secondAttribute="leading" id="61L-Jv-lyS"/>
+                                            <constraint firstAttribute="bottom" secondItem="qLJ-99-4Mk" secondAttribute="bottom" id="AgT-LB-RX8"/>
+                                            <constraint firstItem="qLJ-99-4Mk" firstAttribute="leading" secondItem="qxQ-1H-vem" secondAttribute="leading" id="S88-sR-1G1"/>
                                             <constraint firstItem="0bO-ff-R6I" firstAttribute="top" secondItem="qxQ-1H-vem" secondAttribute="top" id="ac6-J0-q4Z"/>
+                                            <constraint firstItem="qLJ-99-4Mk" firstAttribute="top" secondItem="qxQ-1H-vem" secondAttribute="top" id="bHW-ph-E5V"/>
                                             <constraint firstAttribute="bottom" secondItem="0bO-ff-R6I" secondAttribute="bottom" id="cbj-X0-Yj9"/>
                                             <constraint firstAttribute="trailing" secondItem="0bO-ff-R6I" secondAttribute="trailing" id="e6S-du-U0d"/>
+                                            <constraint firstAttribute="trailing" secondItem="qLJ-99-4Mk" secondAttribute="trailing" id="pMz-Wg-5yZ"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCZ-fN-Ccc">
                                         <rect key="frame" x="0.0" y="95" width="323" height="45"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prZ-ES-GIk">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prZ-ES-GIk" customClass="TKTransitionSubmitButton" customModule="MyFramework" customModuleProvider="target">
                                                 <rect key="frame" x="30" y="0.0" width="263" height="45"/>
                                                 <color key="backgroundColor" red="0.098039215690000001" green="0.22352941179999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
@@ -481,7 +510,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rm9-rL-exa">
+                            <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rm9-rL-exa">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -577,7 +606,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="msH-Cr-6dd" customClass="SkyFloatingLabelTextField" customModule="MyFramework" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="323" height="50"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="_placeholder" value="Enter Mobile Number"/>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelColor">
@@ -656,7 +685,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oOX-aF-fwD">
                                                 <rect key="frame" x="0.0" y="140" width="323" height="45"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3K7-Xi-0DP">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3K7-Xi-0DP" customClass="TKTransitionSubmitButton" customModule="MyFramework" customModuleProvider="target">
                                                         <rect key="frame" x="30" y="0.0" width="263" height="45"/>
                                                         <color key="backgroundColor" red="0.098039215690000001" green="0.22352941179999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
@@ -706,7 +735,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Rm9-rL-exa" secondAttribute="trailing" id="1Jo-Ve-AE7"/>
                             <constraint firstItem="Rm9-rL-exa" firstAttribute="top" secondItem="ejP-72-4Lc" secondAttribute="bottom" id="8jV-Fj-D4d"/>
@@ -738,6 +767,7 @@
     <resources>
         <image name="cellpaylogo.png" width="182" height="82"/>
         <image name="close.png" width="418.90908813476562" height="418.90908813476562"/>
+        <image name="down-arrow.png" width="170.66667175292969" height="170.66667175292969"/>
         <image name="left-arrow.png" width="96" height="96"/>
         <image name="login_bg.png" width="375" height="221"/>
         <image name="lower_bg.png" width="375" height="93"/>

@@ -28,7 +28,7 @@ public class APIClient:NSObject {
             request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
             
         }
-        if (url == WebService.accounts) || (url == WebService.memberPayment){
+        if (url == WebService.accounts) || (url == WebService.memberPayment) || (url == WebService.confirmMemberPayment){
             request.setValue("\(UserInfo.sharedInstance.sessionID ?? "")", forHTTPHeaderField: "Paynet-Session-Token")
         }
         
@@ -41,18 +41,37 @@ public class APIClient:NSObject {
         }
         //        https://stackoverflow.com/a/24380884
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            
-            guard let data = data,                            // is there data
-                let response = response as? HTTPURLResponse,  // is there HTTP response
-                (200 ..< 300) ~= response.statusCode,         // is statusCode 2XX
-                error == nil else {                           // was there no error, otherwise ...
-                    
-                    completion(.failure(APIError.message(error?.localizedDescription ?? "")))
-                    return
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+               
+               
+                let responseMessage = try? JSONDecoder().decode(CellPayMessageError
+                    .self, from: data!)
+                print(responseMessage as Any)
+                completion(.failure(APIError.message(responseMessage?.errors.first?.shortMessage ?? "Something went wrong. Please try again")))
+                print(APIError.message(responseMessage?.errors.first?.shortMessage ?? "Something went wrong. Please try again"))
+                DispatchQueue.main.async {
+                    let snackbar = TTGSnackbar(message: responseMessage?.errors.first?.shortMessage ?? "Something went wrong. Please try again", duration: .long)
+                    snackbar.show()
+                }
+                
             }
-            let json =  try? JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
-            let jsonData = self.jsonEncode(object: json)
-            completion(.success(jsonData!))
+            
+           
+                
+                //            guard let data = data,                            // is there data
+                //                let response = response as? HTTPURLResponse,  // is there HTTP response
+                //                (200 ..< 300) ~= response.statusCode,         // is statusCode 2XX
+                //                error == nil else {                           // was there no error, otherwise ...
+                //
+                //                    completion(.failure(APIError.message(error?.localizedDescription ?? "")))
+                //                    return
+                //            }
+            else if let data = data , error == nil {
+                let json =  try? JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
+                let jsonData = self.jsonEncode(object: json)
+                completion(.success(jsonData!))
+            }
+            
             
         }
         task.resume()

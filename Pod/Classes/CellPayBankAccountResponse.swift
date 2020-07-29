@@ -8,12 +8,12 @@
 import Foundation
 struct BankAccountResponse: Codable {
     let status, sessionExpired: Bool
-    let payload: Payloads
+    public let payload: Payloads
 }
 
 // MARK: - Payload
 struct Payloads: Codable {
-    let memberDetailsList: [MemberDetailsList]
+     public let memberDetailsList: [MemberDetailsList]
 
     enum CodingKeys: String, CodingKey {
         case memberDetailsList = "MemberDetailsList"

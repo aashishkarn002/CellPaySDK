@@ -49,6 +49,11 @@
       "idiom" : "universal",
       "filename" : "close.png",
       "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "down-arrow.png",
+      "scale" : "3x"
     }
     
     

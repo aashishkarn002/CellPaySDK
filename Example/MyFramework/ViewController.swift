@@ -12,7 +12,12 @@ import MyFramework
 class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
-        MyFramework.performSegueToLoginVC(caller: self)
+        
     }
+    
+    @IBAction func payWithCellPayButtonClicked(_ sender: Any) {
+        MyFramework.performSegueToLoginVC(caller: self, requiredArgument: CellPayPaymentArguments(mobileNumber: "9843534280", merchantName: "Online Shop Pvt. Ltd.", paymentType: 1, price: 30, invoiceID: "12313213"))
+    }
+    
 }
 
