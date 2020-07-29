@@ -85,7 +85,7 @@ extension ConfirmPaymentVC {
                     let alert = UIAlertController(title: "Sucessfull", message: "Payment Successfull", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
                         if self.delegate != nil {
-                            self.delegate?.sucess(paymentID: String(response.payload.confirmPaymentResult.id), cellPayArguments: self.requiredArguments!)
+                            self.delegate?.sucess(paymentResponse: response, cellPayArguments: self.requiredArguments!)
                         }
                         self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
                         
@@ -96,7 +96,7 @@ extension ConfirmPaymentVC {
             case .failure(let error):
                 DispatchQueue.main.async {
                     self.confirmButton.returnToOriginalState()
-                    let alert = UIAlertController(title: "Sucessfull", message: "Payment Successfull", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Transaction failed", message: error.localizedDescription, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
                         if self.delegate != nil {
                             self.delegate?.failed(cellPayArguments: self.requiredArguments!)

@@ -7,7 +7,7 @@
 
 import Foundation
 public protocol PaymentProtocol {
-    func sucess(paymentID: String,cellPayArguments: CellPayPaymentArguments)
+    func sucess(paymentResponse: ConfirmPaymentResponse,cellPayArguments: CellPayPaymentArguments)
     func failed(cellPayArguments:CellPayPaymentArguments)
 }
 public class CellPayPaymentArguments {

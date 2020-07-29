@@ -12,6 +12,7 @@ import MyFramework
 class ViewController: UIViewController,PaymentProtocol {
    
     var paymentID: String?
+    var status: Bool?
     var cellpayArguments: CellPayPaymentArguments?
     
     override func viewDidAppear(_ animated: Bool) {
@@ -19,15 +20,19 @@ class ViewController: UIViewController,PaymentProtocol {
     }
     
     @IBAction func payWithCellPayButtonClicked(_ sender: Any) {
+        //This is for reference only use actual value
         MyFramework.performSegueToLoginVC(caller: self, requiredArgument: CellPayPaymentArguments(mobileNumber: "9843534280", merchantName: "Online Shop Pvt. Ltd.", paymentType: 1, price: 30, invoiceID: "12313213"), delegate: self)
     }
-    func sucess(paymentID: String, cellPayArguments: CellPayPaymentArguments) {
-        self.paymentID = paymentID
+    func sucess(paymentResponse: ConfirmPaymentResponse, cellPayArguments: CellPayPaymentArguments) {
+        self.paymentID = String(paymentResponse.payload.confirmPaymentResult.id)
+        self.status = paymentResponse.status
         print(self.paymentID ?? "")
+         print(self.status ?? false)
        }
        
        func failed(cellPayArguments: CellPayPaymentArguments) {
         self.cellpayArguments = cellPayArguments
+        
        }
     
 }

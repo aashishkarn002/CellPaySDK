@@ -6,9 +6,9 @@
 //
 
 import Foundation
-struct ConfirmPaymentResponse: Codable {
-    let status, sessionExpired: Bool
-    let payload: ConfirmPaymentPayload
+public struct ConfirmPaymentResponse: Codable {
+    public let status, sessionExpired: Bool
+    public let payload: ConfirmPaymentPayload
     enum CodingKeys: String, CodingKey {
         case status = "status"
         case sessionExpired = "sessionExpired"
@@ -17,8 +17,8 @@ struct ConfirmPaymentResponse: Codable {
 }
 
 // MARK: - Payload
-struct ConfirmPaymentPayload: Codable {
-    let confirmPaymentResult: ConfirmPaymentResult
+public struct ConfirmPaymentPayload: Codable {
+    public let confirmPaymentResult: ConfirmPaymentResult
     
     enum CodingKeys: String, CodingKey {
         case confirmPaymentResult = "ConfirmPaymentResult"
@@ -26,9 +26,9 @@ struct ConfirmPaymentPayload: Codable {
 }
 
 // MARK: - ConfirmPaymentResult
-struct ConfirmPaymentResult: Codable {
-    let id: Int
-    let pending: Bool
+public struct ConfirmPaymentResult: Codable {
+    public let id: Int
+    public let pending: Bool
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case pending = "pending"
