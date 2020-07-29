@@ -1,5 +1,5 @@
 ## CellPay-SDK
-![](https://dzwonsemrish7.cloudfront.net/items/2R06283n040V3P3p0i42/ezgif.com-optimize.gif)
+![](https://cellpay.com.np/themes/ele/assets/img/CellPay.svg)
 # Steps to add CellPay SdK and usage 
 
 - Add pod 'MyFramework',:git => 'https://github.com/aashishkarn002/CellPaySDK' to your pod file and install pod file.
