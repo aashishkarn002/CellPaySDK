@@ -10,28 +10,28 @@ import UIKit
 
 public class MyFramework {
     
-    public static func performSegueToLoginVC(caller: UIViewController,requiredArgument: CellPayPaymentArguments) {
+    public static func performSegueToLoginVC(caller: UIViewController,requiredArgument: CellPayPaymentArguments,delegate:PaymentProtocol) {
         let storyboard = UIStoryboard(name: "FrameworkStoryboard", bundle: bundle)
          let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
       //  let vc = storyboard.instantiateInitialViewController()!
         loginVC.modalPresentationStyle = .overFullScreen
-        loginVC.getData(requiredData: requiredArgument)
+        loginVC.getData(requiredData: requiredArgument, delegate: delegate)
         caller.present(loginVC, animated: true, completion: nil)
     }
-     static func performSegueToMerchantTransactionDetailVC(caller: UIViewController,merchantDetailList:[MemberDetailsList],requiredArguments: CellPayPaymentArguments) {
+    static func performSegueToMerchantTransactionDetailVC(caller: UIViewController,merchantDetailList:[MemberDetailsList],requiredArguments: CellPayPaymentArguments,delegate:PaymentProtocol) {
         let storyboard = UIStoryboard(name: "FrameworkStoryboard", bundle: bundle)
          let merchantTransactionVC = storyboard.instantiateViewController(withIdentifier: "MerchantTransactionDetailVC") as! MerchantTransactionDetailVC
       //  let vc = storyboard.instantiateInitialViewController()!
         merchantTransactionVC.modalPresentationStyle = .overCurrentContext
-        merchantTransactionVC.getDataForMerchant(merchantBankList: merchantDetailList, requiredArguments: requiredArguments)
+        merchantTransactionVC.getDataForMerchant(merchantBankList: merchantDetailList, requiredArguments: requiredArguments, delegate: delegate)
         caller.present(merchantTransactionVC, animated: true, completion: nil)
     }
-    public static func performSegueToConfirmPaymentVC(caller: UIViewController,requiredArguments: CellPayPaymentArguments,userName: String,accountNo: String,paymentDescription:String,otpEnable:Bool) {
+    static func performSegueToConfirmPaymentVC(caller: UIViewController,requiredArguments: CellPayPaymentArguments,userName: String,accountNo: String,paymentDescription:String,otpEnable:Bool,delegate:PaymentProtocol) {
         let storyboard = UIStoryboard(name: "FrameworkStoryboard", bundle: bundle)
          let confirmPaymentVC = storyboard.instantiateViewController(withIdentifier: "ConfirmPaymentVC") as! ConfirmPaymentVC
       //  let vc = storyboard.instantiateInitialViewController()!
         confirmPaymentVC.modalPresentationStyle = .popover
-        confirmPaymentVC.getRequiredArguments(requiredArguments: requiredArguments, userName: userName,accountNumber:accountNo, paymentDescription: paymentDescription, otpEnable: otpEnable)
+        confirmPaymentVC.getRequiredArguments(requiredArguments: requiredArguments, userName: userName,accountNumber:accountNo, paymentDescription: paymentDescription, otpEnable: otpEnable, delegate: delegate)
         caller.present(confirmPaymentVC, animated: true, completion: nil)
     }
     static var bundle:Bundle {

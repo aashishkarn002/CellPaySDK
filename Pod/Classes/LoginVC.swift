@@ -13,6 +13,7 @@ public class LoginVC: UIViewController{
     @IBOutlet weak var mobileNumberTF: SkyFloatingLabelTextField!
     @IBOutlet weak var loginButton: TKTransitionSubmitButton!
     var cellPayArguments: CellPayPaymentArguments?
+    var delegate:PaymentProtocol?
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
@@ -56,8 +57,9 @@ public class LoginVC: UIViewController{
 }
 //Get Required Data
 extension LoginVC {
-    func getData(requiredData: CellPayPaymentArguments) {
+    func getData(requiredData: CellPayPaymentArguments,delegate:PaymentProtocol) {
         self.cellPayArguments = requiredData
+        self.delegate = delegate
     }
 }
 extension LoginVC {
@@ -87,7 +89,7 @@ extension LoginVC {
             case .success(let response):
                 DispatchQueue.main.async {
                     self.loginButton.returnToOriginalState()
-                    MyFramework.performSegueToMerchantTransactionDetailVC(caller: self, merchantDetailList: response.payload.memberDetailsList, requiredArguments: self.cellPayArguments!)
+                    MyFramework.performSegueToMerchantTransactionDetailVC(caller: self, merchantDetailList: response.payload.memberDetailsList, requiredArguments: self.cellPayArguments!, delegate: self.delegate!)
                 }
                 
                 //self.callPayMerchantmemberPayment()

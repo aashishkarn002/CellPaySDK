@@ -21,6 +21,7 @@ public class MerchantTransactionDetailVC: UIViewController {
     var requiredArguments: CellPayPaymentArguments?
     var userName: String?
     var accountNo: String?
+    var delegate:PaymentProtocol?
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         self.setupView()
@@ -28,9 +29,10 @@ public class MerchantTransactionDetailVC: UIViewController {
         
     }
     
-    func getDataForMerchant(merchantBankList: [MemberDetailsList],requiredArguments:CellPayPaymentArguments) {
+    func getDataForMerchant(merchantBankList: [MemberDetailsList],requiredArguments:CellPayPaymentArguments,delegate:PaymentProtocol) {
         self.memberDetailList = merchantBankList
         self.requiredArguments = requiredArguments
+        self.delegate = delegate
     }
     @IBAction func selectBankButtonClicked(_ sender: Any) {
         selectBankToDebitTF.errorMessage = ""
@@ -112,7 +114,7 @@ extension MerchantTransactionDetailVC {
             case .success(let response):
                 DispatchQueue.main.async {
                     self.nextButton.returnToOriginalState()
-                    MyFramework.performSegueToConfirmPaymentVC(caller: self, requiredArguments: self.requiredArguments!, userName: self.userName ?? "", accountNo: self.accountNo ?? "", paymentDescription: self.descriptionTF.text ?? "Pay Merchant", otpEnable: response.payload.doPaymentResult.isOtpEnable)
+                    MyFramework.performSegueToConfirmPaymentVC(caller: self, requiredArguments: self.requiredArguments!, userName: self.userName ?? "", accountNo: self.accountNo ?? "", paymentDescription: self.descriptionTF.text ?? "Pay Merchant", otpEnable: response.payload.doPaymentResult.isOtpEnable, delegate: self.delegate!)
                 }
                 print(response)
             case .failure(let error):

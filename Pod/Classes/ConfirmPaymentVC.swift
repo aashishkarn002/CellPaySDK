@@ -19,6 +19,7 @@ public class ConfirmPaymentVC: UIViewController {
     @IBOutlet weak var amountTFView: UIView!
     @IBOutlet weak var confirmButton: TKTransitionSubmitButton!
     @IBOutlet weak var otpTF: SkyFloatingLabelTextField!
+    var delegate: PaymentProtocol?
     var requiredArguments: CellPayPaymentArguments?
     var userName: String?
     var accountNumber: String?
@@ -83,7 +84,11 @@ extension ConfirmPaymentVC {
                     self.confirmButton.returnToOriginalState()
                     let alert = UIAlertController(title: "Sucessfull", message: "Payment Successfull", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                        if self.delegate != nil {
+                            self.delegate?.sucess(paymentID: String(response.payload.confirmPaymentResult.id), cellPayArguments: self.requiredArguments!)
+                        }
                         self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+                        
                     }))
                     self.present(alert, animated: true, completion: nil)
                 }
@@ -91,6 +96,16 @@ extension ConfirmPaymentVC {
             case .failure(let error):
                 DispatchQueue.main.async {
                     self.confirmButton.returnToOriginalState()
+                    let alert = UIAlertController(title: "Sucessfull", message: "Payment Successfull", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                        if self.delegate != nil {
+                            self.delegate?.failed(cellPayArguments: self.requiredArguments!)
+                        }
+                        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+                        
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                    
                 }
                 print(error)
                 
@@ -101,12 +116,13 @@ extension ConfirmPaymentVC {
 }
 //get CellPayRequiredArguments
 extension ConfirmPaymentVC {
-    func getRequiredArguments(requiredArguments: CellPayPaymentArguments,userName: String,accountNumber: String,paymentDescription:String,otpEnable: Bool) {
+    func getRequiredArguments(requiredArguments: CellPayPaymentArguments,userName: String,accountNumber: String,paymentDescription:String,otpEnable: Bool,delegate: PaymentProtocol) {
         self.requiredArguments = requiredArguments
         self.accountNumber = accountNumber
         self.userName = userName
         self.otpEnable = otpEnable
         self.paymentDescription = paymentDescription
+        self.delegate = delegate
     }
 }
 extension ConfirmPaymentVC: UITextFieldDelegate {
@@ -130,15 +146,15 @@ extension ConfirmPaymentVC {
         self.amountTF.text = String(requiredArguments?.price ?? 0)
     }
     public func textFieldDidBeginEditing(_ textField: UITextField) {
-           if textField == amountTF {
-               amountTF.errorMessage = ""
-           }
-           else if textField == enterPinTF {
-               enterPinTF.errorMessage = ""
-           }
-           else if textField == otpTF {
-               otpTF.errorMessage = ""
-           }
-          
-       }
+        if textField == amountTF {
+            amountTF.errorMessage = ""
+        }
+        else if textField == enterPinTF {
+            enterPinTF.errorMessage = ""
+        }
+        else if textField == otpTF {
+            otpTF.errorMessage = ""
+        }
+        
+    }
 }
