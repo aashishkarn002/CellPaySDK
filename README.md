@@ -8,7 +8,9 @@
 
 - After installing pod file  import MyFramework to viewcontroller.
 
-- In @IBAction of Pay with CellPay Button call CellPay SDK LoginVC as  MyFramework.performSegueToLoginVC(caller: self, requiredArgument: CellPayPaymentArguments(mobileNumber: "9843534280", merchantName: merchantName, paymentType: 1 or 2, price: amount, invoiceID: invoiceID))
+- In @IBAction of Pay with CellPay Button call CellPay SDK LoginVC as  
+
+#### MyFramework.performSegueToLoginVC(caller: self, requiredArgument: CellPayPaymentArguments(mobileNumber: "9843534280", merchantName: merchantName, paymentType: 1 or 2, price: amount, invoiceID: invoiceID))
 
 ### Note: Send 1 in paymentType if it is MemberPayment and 2 if it is SystmePayment.  
 
