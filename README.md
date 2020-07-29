@@ -12,7 +12,7 @@
 
 #### MyFramework.performSegueToLoginVC(caller: self, requiredArgument: CellPayPaymentArguments(mobileNumber: "9843534280", merchantName: merchantName, paymentType: 1 or 2, price: amount, invoiceID: invoiceID))
 
-### Note: Send 1 in paymentType if it is MemberPayment and 2 if it is SystmePayment.  
+### Note: Send 1 in paymentType if it is MemberPayment and 2 if it is SystemPayment.  
 
 
 ## Usage
