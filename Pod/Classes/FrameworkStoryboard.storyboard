@@ -54,17 +54,9 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="_placeholder" value="Enter Mobile Number"/>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelColor">
-                                                <color key="value" red="0.098039215690000001" green="0.22352941179999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="activeBorderColor">
-                                                <color key="value" red="0.098039215690000001" green="0.22352941179999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                                 <color key="value" red="0.68627450980000004" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter Mobile Number"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="Enter Mobile Number"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
                                                 <color key="value" red="0.098039215690000001" green="0.22352941179999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -75,6 +67,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
                                                 <color key="value" red="0.68627450980000004" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter Mobile Number"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d28-xf-ldx" customClass="SkyFloatingLabelTextField" customModule="MyFramework" customModuleProvider="target">
@@ -85,17 +78,10 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="_placeholder" value="Enter 6 Digit PIN"/>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelColor">
-                                                <color key="value" red="0.098039215690000001" green="0.22352941179999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="activeBorderColor">
-                                                <color key="value" red="0.098039215690000001" green="0.22352941179999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter 6 Digit PIN"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                                 <color key="value" red="0.68627450980392157" green="0.70196078431372544" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter 6 Digit PIN"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="Enter 6 Digit PIN"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
                                                 <color key="value" red="0.68627450980392157" green="0.70196078431372544" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -238,13 +224,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="_placeholder" value="Enter Mobile Number"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelColor">
-                                        <color key="value" red="0.098039215690000001" green="0.22352941179999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="activeBorderColor">
-                                        <color key="value" red="0.098039215690000001" green="0.22352941179999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter Mobile Number"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                         <color key="value" red="0.68627450980000004" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
@@ -269,13 +249,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="_placeholder" value="Enter Mobile Number"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelColor">
-                                        <color key="value" red="0.098039215690000001" green="0.22352941179999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="activeBorderColor">
-                                        <color key="value" red="0.098039215690000001" green="0.22352941179999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter Mobile Number"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                         <color key="value" red="0.68627450980000004" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
@@ -300,13 +274,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="_placeholder" value="Enter Mobile Number"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelColor">
-                                        <color key="value" red="0.098039215690000001" green="0.22352941179999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="activeBorderColor">
-                                        <color key="value" red="0.098039215690000001" green="0.22352941179999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter Mobile Number"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                         <color key="value" red="0.68627450980000004" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
@@ -331,13 +299,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="_placeholder" value="Enter Mobile Number"/>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelColor">
-                                                <color key="value" red="0.098039215690000001" green="0.22352941179999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="activeBorderColor">
-                                                <color key="value" red="0.098039215690000001" green="0.22352941179999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter Mobile Number"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                                 <color key="value" red="0.68627450980000004" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
@@ -390,13 +352,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="_placeholder" value="Enter Mobile Number"/>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelColor">
-                                                        <color key="value" red="0.098039215690000001" green="0.22352941179999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="activeBorderColor">
-                                                        <color key="value" red="0.098039215690000001" green="0.22352941179999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter Mobile Number"/>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                                         <color key="value" red="0.68627450980000004" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
@@ -564,13 +520,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="_placeholder" value="Enter Mobile Number"/>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelColor">
-                                                        <color key="value" red="0.098039215690000001" green="0.22352941179999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="activeBorderColor">
-                                                        <color key="value" red="0.098039215690000001" green="0.22352941179999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter Mobile Number"/>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                                         <color key="value" red="0.68627450980000004" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
@@ -608,13 +558,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="_placeholder" value="Enter Mobile Number"/>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelColor">
-                                                                <color key="value" red="0.098039215690000001" green="0.22352941179999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="activeBorderColor">
-                                                                <color key="value" red="0.098039215690000001" green="0.22352941179999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter Mobile Number"/>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                                                 <color key="value" red="0.68627450980000004" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
@@ -649,13 +593,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="_placeholder" value="Enter Mobile Number"/>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelColor">
-                                                                <color key="value" red="0.098039215690000001" green="0.22352941179999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="activeBorderColor">
-                                                                <color key="value" red="0.098039215690000001" green="0.22352941179999999" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter Mobile Number"/>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                                                 <color key="value" red="0.68627450980000004" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
