@@ -14,24 +14,22 @@ public class WebService {
     
     //let BaseUrl:String = "https://web.cellpay.com.np/rest/"
     
-    //let BaseUrl:String = "http://192.168.1.14:8080/paynet/rest/"
-    
     static var isLive: Bool = false
     
     public static var baseUrl: String {
         return isLive ? "https://web.cellpay.com.np/rest/" : "https://test.cellpay.com.np/rest/"
     }
     public static var login: String {
-        return isLive ? "" : "access/login"
+        return isLive ? "access/login" : "access/login"
     }
     public static var accounts: String {
-        return isLive ? "" : "memberRecord/accounts"
+        return isLive ? "memberRecord/accounts" : "memberRecord/accounts"
     }
     public static var memberPayment: String {
-        return isLive ? "" : "payments/memberPayment"
+        return isLive ? "payments/memberPayment" : "payments/memberPayment"
     }
     public static var confirmMemberPayment: String {
-           return isLive ? "" : "payments/confirmMemberPayment"
+           return isLive ? "payments/confirmMemberPayment" : "payments/confirmMemberPayment"
        }
     
 }

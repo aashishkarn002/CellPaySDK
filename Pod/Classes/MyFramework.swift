@@ -1,16 +1,13 @@
 //
 //  MyFramework.swift
 //  Pods
-//
-//  Created by John Nilsen on 3/25/16.
-//
-//
 
 import UIKit
 
-public class MyFramework {
+public class CellPayFramework {
     
-    public static func performSegueToLoginVC(caller: UIViewController,requiredArgument: CellPayPaymentArguments,delegate:PaymentProtocol) {
+    public static func performSegueToLoginVC(caller: UIViewController,requiredArgument: CellPayPaymentArguments,delegate:PaymentProtocol,islive:Bool) {
+        WebService.isLive = islive
         let storyboard = UIStoryboard(name: "FrameworkStoryboard", bundle: bundle)
          let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
       //  let vc = storyboard.instantiateInitialViewController()!

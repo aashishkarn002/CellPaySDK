@@ -63,7 +63,7 @@ extension LoginVC {
     }
 }
 extension LoginVC {
-    func callLogin() {
+    private func callLogin() {
         self.loginButton.startLoadingAnimation()
         let apiCalling = ApiCalling()
         apiCalling.userLogin(userName:mobileNumberTF.text ?? "",password:pinNumberTF.text ??          "",completion: { (status) in
@@ -82,14 +82,14 @@ extension LoginVC {
             }
         })
     }
-    func getBankAccount() {
+  private func getBankAccount() {
         let apiCalling = ApiCalling()
         apiCalling.getCellPayBankAccoutList { (status) in
             switch status {
             case .success(let response):
                 DispatchQueue.main.async {
                     self.loginButton.returnToOriginalState()
-                    MyFramework.performSegueToMerchantTransactionDetailVC(caller: self, merchantDetailList: response.payload.memberDetailsList, requiredArguments: self.cellPayArguments!, delegate: self.delegate!)
+                    CellPayFramework.performSegueToMerchantTransactionDetailVC(caller: self, merchantDetailList: response.payload.memberDetailsList, requiredArguments: self.cellPayArguments!, delegate: self.delegate!)
                 }
                 
                 //self.callPayMerchantmemberPayment()

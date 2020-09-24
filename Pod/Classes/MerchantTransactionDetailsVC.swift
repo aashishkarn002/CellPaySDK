@@ -114,7 +114,7 @@ extension MerchantTransactionDetailVC {
             case .success(let response):
                 DispatchQueue.main.async {
                     self.nextButton.returnToOriginalState()
-                    MyFramework.performSegueToConfirmPaymentVC(caller: self, requiredArguments: self.requiredArguments!, userName: self.userName ?? "", accountNo: self.accountNo ?? "", paymentDescription: self.descriptionTF.text ?? "Pay Merchant", otpEnable: response.payload.doPaymentResult.isOtpEnable, delegate: self.delegate!)
+                    CellPayFramework.performSegueToConfirmPaymentVC(caller: self, requiredArguments: self.requiredArguments!, userName: self.userName ?? "", accountNo: self.accountNo ?? "", paymentDescription: self.descriptionTF.text ?? "Pay Merchant", otpEnable: response.payload.doPaymentResult.isOtpEnable, delegate: self.delegate!)
                 }
                 print(response)
             case .failure(let error):

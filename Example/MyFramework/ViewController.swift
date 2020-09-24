@@ -21,7 +21,7 @@ class ViewController: UIViewController,PaymentProtocol {
     
     @IBAction func payWithCellPayButtonClicked(_ sender: Any) {
         //This is for reference only use actual value
-        MyFramework.performSegueToLoginVC(caller: self, requiredArgument: CellPayPaymentArguments(mobileNumber: "9843534280", merchantName: "Online Shop Pvt. Ltd.", paymentType: 1, price: 30, invoiceID: "12313213"), delegate: self)
+        CellPayFramework.performSegueToLoginVC(caller: self, requiredArgument: CellPayPaymentArguments(mobileNumber: "9843534280", merchantName: "Online Shop Pvt. Ltd.", paymentType: 1, price: 30, invoiceID: "12313213"), delegate: self,islive: false)
     }
     func sucess(paymentResponse: ConfirmPaymentResponse, cellPayArguments: CellPayPaymentArguments) {
         self.paymentID = String(paymentResponse.payload.confirmPaymentResult.id)
