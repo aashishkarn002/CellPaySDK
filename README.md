@@ -2,7 +2,7 @@
 ![](https://cellpay.com.np/themes/ele/assets/img/CellPay.svg)
 # Steps to add CellPay SdK and usage 
 
-- Add pod 'CellPayButton',:git => 'https://github.com/aashishkarn002/CellPayButton' to your pod file and install pod file.
+- Add pod 'CellPayButton',:git => 'https://github.com/aashishkarn002/CellPaySDK' to your pod file and install pod file.
 
 - Add Pay with CellPay Button with hex value (#193983), rgb(red:25,green:57,blue:131,alpha:1) to viewcontroller.
 
@@ -31,7 +31,7 @@ CellPay Framework is available through [CocoaPods](http://cocoapods.org). To ins
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'CellPayButton',:git => 'https://github.com/aashishkarn002/CellPayButton'
+pod 'MYFramework',:git => 'https://github.com/aashishkarn002/CellPaySDK'
 ```
 
 ## Author
