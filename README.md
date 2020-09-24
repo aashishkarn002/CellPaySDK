@@ -31,7 +31,7 @@ CellPay Framework is available through [CocoaPods](http://cocoapods.org). To ins
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'MYFramework',:git => 'https://github.com/aashishkarn002/CellPaySDK'
+pod 'MyFramework',:git => 'https://github.com/aashishkarn002/CellPaySDK'
 ```
 
 ## Author
