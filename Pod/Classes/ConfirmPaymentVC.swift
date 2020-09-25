@@ -41,11 +41,11 @@ public class ConfirmPaymentVC: UIViewController {
         else if enterPinTF.text?.isEmpty ?? true || enterPinTF.text?.count ?? 0 < 6{
             enterPinTF.errorMessage = StringConstants.sharedInstance.invalidPin
         }
-        else if otpEnable == true {
+       
             if otpTF.text?.isEmpty ?? true  {
                 otpTF.errorMessage = StringConstants.sharedInstance.invalidOTP
             }
-        }
+        
         else {
             enterPinTF.errorMessage = ""
             otpTF.errorMessage = ""
@@ -67,7 +67,7 @@ extension ConfirmPaymentVC {
             AccountNumberInternalValue(fieldID: "14", value: accountNumber ?? ""),
             InvoiceNumberInternalValue(fieldID: "99", value: self.requiredArguments?.invoiceID ?? "")
         ]
-        let memberParams = MemberBasePaymentSP(transferTypeID: "50", amount: String(self.requiredArguments?.price ?? 0), toMemberPrincipal: "9801977888", basePaymentSPDescription: self.paymentDescription ?? "Pay Merchant", currencyID: "1", webRequest: true, customValues: customValues.map(BasePaymentCustomValues.init), isOtpEnable: false)
+        let memberParams = ConfirmMemberBasePaymentSP(transferTypeID: "50", amount: String(self.requiredArguments?.price ?? 0), toMemberPrincipal: "9801977888", basePaymentSPDescription: self.paymentDescription ?? "Pay Merchant", currencyID: "1",transactionPin: enterPinTF.text ?? "",otp: otpTF.text ?? "", webRequest: true, customValues: customValues.map(BasePaymentCustomValues.init), isOtpEnable: false)
         let systemParams = SystemBasePaymentSP(transferTypeID: "174", amount: String(self.requiredArguments?.price ?? 0), basePaymentSPDescription: "Pay Merchant", currencyID: "1", webRequest: true, customValues:        customValues.map(BasePaymentCustomValues.init), isOtpEnable: false)
         let sendParams: [String: Any]?
         if self.requiredArguments?.paymentType == 1{

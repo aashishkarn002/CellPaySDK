@@ -29,6 +29,28 @@ struct MemberBasePaymentSP: Codable {
         case isOtpEnable = "isOtpEnable"
     }
 }
+struct ConfirmMemberBasePaymentSP: Codable {
+    let transferTypeID, amount, toMemberPrincipal, basePaymentSPDescription: String
+    let currencyID: String
+    let transactionPin: String?
+    let otp:String?
+    let webRequest: Bool
+    let customValues: [BasePaymentCustomValues]
+    let isOtpEnable: Bool
+    
+    enum CodingKeys: String, CodingKey {
+        case transferTypeID = "transferTypeId"
+        case amount = "amount"
+        case otp = "otp"
+        case transactionPin = "transactionPin"
+        case toMemberPrincipal = "toMemberPrincipal"
+        case basePaymentSPDescription = "description"
+        case currencyID = "currencyId"
+        case webRequest = "webRequest"
+        case customValues = "customValues"
+        case isOtpEnable = "isOtpEnable"
+    }
+}
 struct SystemBasePaymentSP: Codable {
     let transferTypeID, amount, basePaymentSPDescription: String
     let currencyID: String

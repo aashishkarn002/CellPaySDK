@@ -22,10 +22,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vRQ-Gb-I90">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="268.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="a1U-CN-POy">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="a1U-CN-POy">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="268.5"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cellpaylogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="p3p-QK-qhJ">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_logo-1" translatesAutoresizingMaskIntoConstraints="NO" id="p3p-QK-qhJ">
                                         <rect key="frame" x="87.5" y="92" width="200" height="85"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="85" id="mqx-E8-0MJ"/>
@@ -123,7 +123,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A35-pZ-whE">
                                 <rect key="frame" x="0.0" y="488.5" width="375" height="178.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lower_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="oMh-R0-byf">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_lower_bg" translatesAutoresizingMaskIntoConstraints="NO" id="oMh-R0-byf">
                                         <rect key="frame" x="0.0" y="83.5" width="375" height="95"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="95" id="gTV-cP-swO"/>
@@ -181,7 +181,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fN8-HG-8Wa">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="dyA-Hm-bFX">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_login_bg_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="dyA-Hm-bFX">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merchant Transaction Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYY-bU-ek8">
@@ -196,7 +196,7 @@
                                             <constraint firstAttribute="width" constant="25" id="FrB-QF-fK2"/>
                                             <constraint firstAttribute="height" constant="25" id="wH4-tg-mgF"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="left-arrow.png"/>
+                                        <state key="normal" title="Button" image="arrow.left" catalog="system"/>
                                         <connections>
                                             <action selector="backButttonClicked:" destination="Jig-M0-QEZ" eventType="touchUpInside" id="VOP-Bg-W2O"/>
                                         </connections>
@@ -486,7 +486,7 @@
                                             <constraint firstAttribute="width" constant="15" id="aFm-t9-DCp"/>
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="close.png"/>
+                                        <state key="normal" image="xmark.rectangle" catalog="system"/>
                                         <connections>
                                             <action selector="closeButtonClicked:" destination="HR2-xA-X26" eventType="touchUpInside" id="kP7-YY-9qe"/>
                                         </connections>
@@ -703,11 +703,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cellpaylogo.png" width="182" height="82"/>
-        <image name="close.png" width="418.90908813476562" height="418.90908813476562"/>
+        <image name="arrow.left" catalog="system" width="64" height="48"/>
         <image name="down-arrow.png" width="170.66667175292969" height="170.66667175292969"/>
-        <image name="left-arrow.png" width="96" height="96"/>
-        <image name="login_bg.png" width="375" height="221"/>
-        <image name="lower_bg.png" width="375" height="93"/>
+        <image name="new_login_bg" width="375" height="221"/>
+        <image name="new_login_bg_transparent" width="345" height="186"/>
+        <image name="new_logo-1" width="182" height="82"/>
+        <image name="new_lower_bg" width="375" height="93"/>
+        <image name="xmark.rectangle" catalog="system" width="64" height="46"/>
     </resources>
 </document>
